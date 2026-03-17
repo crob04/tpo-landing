@@ -258,7 +258,10 @@ export default function Home({ episodes }) {
 }
 
 export async function getStaticProps() {
-  // Mock episodes - will integrate real Podbean API
+  // TODO: Import getPodcastEpisodes when Podbean API key is available
+  // const liveEpisodes = await getPodcastEpisodes();
+  // const episodes = liveEpisodes || defaultEpisodes;
+  
   const episodes = [
     {
       title: "Why Global Thinking Matters in Orthotics and Prosthetics with Hugh Sheridan",
