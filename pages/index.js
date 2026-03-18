@@ -266,7 +266,7 @@ export default function Home({ episodes }) {
           )}
 
           <div className="text-center mt-12">
-            <a href="https://podbean.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-3 border-2 border-slate-600 rounded-lg font-bold hover:border-blue-400 hover:text-blue-400 transition">
+            <a href="https://www.buzzsprout.com/1995877" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-3 border-2 border-slate-600 rounded-lg font-bold hover:border-blue-400 hover:text-blue-400 transition">
               View All Episodes
               <div className="w-5 h-5"><Icons.Arrow /></div>
             </a>
@@ -300,9 +300,9 @@ export default function Home({ episodes }) {
                 <div className="w-5 h-5"><Icons.Play /></div>
                 Google Podcasts
               </a>
-              <a href="https://podbean.com" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition font-semibold text-slate-100 text-center border border-slate-700/50 hover:border-slate-600 flex items-center justify-center gap-2">
+              <a href="https://www.buzzsprout.com/1995877" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition font-semibold text-slate-100 text-center border border-slate-700/50 hover:border-slate-600 flex items-center justify-center gap-2">
                 <div className="w-5 h-5"><Icons.Microphone /></div>
-                Podbean
+                Buzzsprout
               </a>
             </div>
 
@@ -343,7 +343,7 @@ export default function Home({ episodes }) {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><a href="https://podcasts.apple.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Apple Podcasts</a></li>
                 <li><a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Spotify</a></li>
-                <li><a href="https://podbean.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Podbean</a></li>
+                <li><a href="https://www.buzzsprout.com/1995877" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Buzzsprout</a></li>
               </ul>
             </div>
             <div>
