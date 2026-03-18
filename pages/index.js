@@ -368,50 +368,58 @@ export default function Home({ episodes }) {
   )
 }
 
+import { getBuzzsproutEpisodes } from '../lib/buzzsprout'
+
 export async function getStaticProps() {
-  const episodes = [
-    {
-      title: "Why Global Thinking Matters in Orthotics and Prosthetics with Hugh Sheridan",
-      description: "Exploring international perspectives and global best practices in prosthetic and orthotic innovation",
-      pubDate: "Mar 10, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-    {
-      title: "From Jungle Clinics To Print Farms, Material Extrusion Is Changing Patient Care",
-      description: "How additive manufacturing is democratizing prosthetics and orthotics worldwide, from remote clinics to advanced facilities",
-      pubDate: "Mar 3, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-    {
-      title: "The Next Era of Software for Prosthetics and Orthotics with Zoltan Karpati",
-      description: "Discussing scan-to-fit technology, AI landmarking, XR training, and the future of digital prosthetic design",
-      pubDate: "Feb 24, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-    {
-      title: "The Hidden Power of Good Notes: How Documentation Protects Your Practice",
-      description: "Why clinical documentation is crucial for patient outcomes, practice management, and building trust",
-      pubDate: "Feb 17, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-    {
-      title: "3D Printing Materials: The Next Generation",
-      description: "Deep dive into cutting-edge biomaterials and composites revolutionizing additive manufacturing in orthotics",
-      pubDate: "Feb 10, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-    {
-      title: "AI Landmarking in Prosthetic Design",
-      description: "How machine learning is automating and improving prosthetic socket design for better fit and comfort",
-      pubDate: "Feb 3, 2026",
-      link: "https://tpopodcast.podbean.com",
-    },
-  ]
+  // Fetch live episodes from Buzzsprout
+  let episodes = await getBuzzsproutEpisodes()
+
+  // Fallback to mock episodes if API fails
+  if (!episodes || episodes.length === 0) {
+    episodes = [
+      {
+        title: "Why Global Thinking Matters in Orthotics and Prosthetics with Hugh Sheridan",
+        description: "Exploring international perspectives and global best practices in prosthetic and orthotic innovation",
+        pubDate: "Mar 10, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+      {
+        title: "From Jungle Clinics To Print Farms, Material Extrusion Is Changing Patient Care",
+        description: "How additive manufacturing is democratizing prosthetics and orthotics worldwide, from remote clinics to advanced facilities",
+        pubDate: "Mar 3, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+      {
+        title: "The Next Era of Software for Prosthetics and Orthotics with Zoltan Karpati",
+        description: "Discussing scan-to-fit technology, AI landmarking, XR training, and the future of digital prosthetic design",
+        pubDate: "Feb 24, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+      {
+        title: "The Hidden Power of Good Notes: How Documentation Protects Your Practice",
+        description: "Why clinical documentation is crucial for patient outcomes, practice management, and building trust",
+        pubDate: "Feb 17, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+      {
+        title: "3D Printing Materials: The Next Generation",
+        description: "Deep dive into cutting-edge biomaterials and composites revolutionizing additive manufacturing in orthotics",
+        pubDate: "Feb 10, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+      {
+        title: "AI Landmarking in Prosthetic Design",
+        description: "How machine learning is automating and improving prosthetic socket design for better fit and comfort",
+        pubDate: "Feb 3, 2026",
+        link: "https://www.buzzsprout.com/1995877",
+      },
+    ]
+  }
 
   return {
     props: {
       episodes,
     },
-    revalidate: 3600,
+    revalidate: 3600, // Revalidate every hour
   }
 }
